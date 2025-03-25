@@ -1,0 +1,3 @@
+#define SERVER_PORT 8080
+#define FRAME_PER_SECOND 60.0
+#define BUFFER_SIZE 2048
