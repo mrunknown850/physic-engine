@@ -88,6 +88,7 @@ public:
      * @return A point displaced by the given vector.
      */
     Point3 operator+(const Vec3 &other) const;
+    Point3 &operator+=(const Vec3 &other);
 
     /**
      * @brief Difference between two points.

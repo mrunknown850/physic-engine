@@ -42,21 +42,21 @@ int main()
         std::vector<std::string> tokens = tokenize_std_input();
         if (tokens[0] == "CREATE")
         {
-            Vec3 position(std::stoi(tokens[1]), std::stoi(tokens[2]), std::stoi(tokens[3]));
+            Point3 position(std::stoi(tokens[1]), std::stoi(tokens[2]), std::stoi(tokens[3]));
             float mass = std::stof(tokens[4]);
 
-            int id = physics.CreateObject(RigidBody(position, mass));
-            std::cout << "Created RigidBody " << id
+            int id = physics.CreateObject(Body(position, mass));
+            std::cout << "Created Body " << id
                       << " at " << tokens[1] << " " << tokens[2] << " " << tokens[3]
                       << " with mass of " << tokens[4] << std::endl;
         }
         else if (tokens[0] == "APPLY")
         {
             int body_id = std::stoi(tokens[1]);
-            Vec3 origin(std::stoi(tokens[2]), std::stoi(tokens[3]), std::stoi(tokens[4]));
+            Vec3 offset(std::stoi(tokens[2]), std::stoi(tokens[3]), std::stoi(tokens[4]));
             Vec3 direction(std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
             float duration = std::stoi(tokens[8]);
-            Force force(origin, direction, duration);
+            Force force(offset, direction, duration);
             physics.applyForce(body_id, force);
             std::cout << "Applied a force to body_id" << tokens[1]
                       << " at " << tokens[2] << " " << tokens[3] << " " << tokens[4]
@@ -70,7 +70,7 @@ int main()
             std::cout << "Dumping informations\n";
             for (int t = 0; t < physics.ObjectCount(); t++)
             {
-                RigidBody *body = physics.GetObject(t);
+                Body *body = physics.GetObject(t);
                 std::cout << "RIGIDBODY INFO #" << t << std::endl;
                 std::cout << "- Position: " << body->position.x << " " << body->position.y << " " << body->position.z << std::endl;
                 std::cout << "- Mass: " << body->mass << std::endl;

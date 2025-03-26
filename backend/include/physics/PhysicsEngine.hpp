@@ -13,7 +13,7 @@
 class PhysicsEngine
 {
 private:
-    std::vector<RigidBody> bodies;
+    std::vector<Body> bodies;
     std::unordered_map<int, std::vector<Force>> forces;
     double timeStep;
 
@@ -21,14 +21,14 @@ public:
     PhysicsEngine(double timeStep = 1.0 / FRAME_PER_SECOND); // Default: 60 FPS
 
     // Getting informations
-    RigidBody *GetObject(int body_id);
-    int CreateObject(const RigidBody &body);
+    Body *GetObject(int body_id);
+    int CreateObject(const Body &body);
     int ObjectCount();
 
     // Applying forces
     void applyForce(int bodyIndex, const Force &force);
     void update();
-    // std::vector<RigidBody> getState() const;
+    // std::vector<Body> getState() const;
 };
 
 #endif // PHYSICS_HPP

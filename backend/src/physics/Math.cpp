@@ -26,6 +26,12 @@ double Vec3::LengthSquared() const
 Point3::Point3() : x(0), y(0), z(0) {}
 Point3::Point3(double x, double y, double z) : x(x), y(y), z(z) {}
 Point3 Point3::operator+(const Vec3 &other) const { return Point3(x + other.x, y + other.y, z + other.z); }
+Point3 &Point3::operator+=(const Vec3 &other) {
+    x += other.x;
+    y += other.y;
+    z += other.z;
+    return *this;
+}
 Vec3 Point3::operator-(const Point3 &other) const { return Vec3(x - other.x, y - other.y, z - other.z); }
 
 // Utils
