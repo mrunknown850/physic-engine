@@ -10,13 +10,13 @@
 class Component
 {
 protected:
-    Body *parentObject;
+    Object *parentObject;
 
 public:
-    Component(Body *parent = nullptr) : parentObject(parent) {}
+    Component(Object *parent = nullptr) : parentObject(parent) {}
 
     // Getter for the parent object
-    Body *GetParent() const { return parentObject; }
+    Object *GetParent() const { return parentObject; }
 
     // Virtual destructor to allow proper cleanup in derived classes
     virtual ~Component() = default;

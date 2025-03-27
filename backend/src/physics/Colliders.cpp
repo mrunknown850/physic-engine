@@ -3,7 +3,7 @@
 #include <algorithm>
 
 // Forward declaration of IsCircleCircleCollision
-Collider::Collider(Body *parent, Vec3 offset) : Component(parent), offset(offset) {}
+Collider::Collider(Object *parent, Vec3 offset) : Component(parent), offset(offset) {}
 Point3 Collider::GetAbsoluteCenter() const { return parentObject->position + offset; }
 
 bool IsCircleCircleCollision(const SphereCollider &c1, const SphereCollider &c2)
@@ -35,9 +35,9 @@ bool IsSphereBoxCollision(const SphereCollider &sphere, const BoxCollider &box)
     return distSquared <= (sphere.radius * sphere.radius);
 }
 
-SphereCollider::SphereCollider(Body *parent, double r, Vec3 offset)
+SphereCollider::SphereCollider(Object *parent, double r, Vec3 offset)
     : Collider(parent, offset), radius(r) {}
-BoxCollider::BoxCollider(Body *parent, Vec3 scale, Vec3 offset)
+BoxCollider::BoxCollider(Object *parent, Vec3 scale, Vec3 offset)
     : Collider(parent, offset), scale(scale) {}
 bool SphereCollider::CollidesWith(const Collider &other) const
 {

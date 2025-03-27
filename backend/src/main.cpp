@@ -45,7 +45,7 @@ int main()
             Point3 position(std::stoi(tokens[1]), std::stoi(tokens[2]), std::stoi(tokens[3]));
             float mass = std::stof(tokens[4]);
 
-            int id = physics.CreateObject(Body(position, mass));
+            int id = physics.CreateObject(Object(position, mass));
             std::cout << "Created Body " << id
                       << " at " << tokens[1] << " " << tokens[2] << " " << tokens[3]
                       << " with mass of " << tokens[4] << std::endl;
@@ -70,7 +70,7 @@ int main()
             std::cout << "Dumping informations\n";
             for (int t = 0; t < physics.ObjectCount(); t++)
             {
-                Body *body = physics.GetObject(t);
+                Object *body = physics.GetObject(t);
                 std::cout << "RIGIDBODY INFO #" << t << std::endl;
                 std::cout << "- Position: " << body->position.x << " " << body->position.y << " " << body->position.z << std::endl;
                 std::cout << "- Mass: " << body->mass << std::endl;

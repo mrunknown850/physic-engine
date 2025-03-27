@@ -16,8 +16,8 @@ class PhysicsEvent
 {
 public:
     EventType Type;
-    Body *body1, *body2;
-    PhysicsEvent(EventType Type, Body *a, Body *b = nullptr);
+    Object *body1, *body2;
+    PhysicsEvent(EventType Type, Object *a, Object *b = nullptr);
 };
 
 class IEventListener

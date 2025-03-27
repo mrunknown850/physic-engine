@@ -28,7 +28,7 @@ public:
      */
     Point3 GetAbsoluteCenter() const;
 
-    Collider(Body *parent, Vec3 offset = Vec3(0, 0, 0));
+    Collider(Object *parent, Vec3 offset = Vec3(0, 0, 0));
 
     virtual ColliderType GetType() const = 0;
     virtual bool CollidesWith(const Collider &other) const = 0;
@@ -49,7 +49,7 @@ public:
      * @param center The center.
      * @param radius The radius.
      */
-    SphereCollider(Body *parent, double radius, Vec3 offset = Vec3(0, 0, 0));
+    SphereCollider(Object *parent, double radius, Vec3 offset = Vec3(0, 0, 0));
 
     /**
      * @brief Retrieving the type of collider.
@@ -82,7 +82,7 @@ public:
      * @param scale The scale of the collider.
      * @param offset The position of the center of the collider relative to the object center.
      */
-    BoxCollider(Body *parent, Vec3 scale, Vec3 offset = Vec3(0, 0, 0));
+    BoxCollider(Object *parent, Vec3 scale, Vec3 offset = Vec3(0, 0, 0));
 
     /**
      * @brief Get the type of the collider

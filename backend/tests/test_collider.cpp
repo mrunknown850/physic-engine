@@ -3,8 +3,8 @@
 
 TEST(CircleCollisionTest, CirclesShouldCollide)
 {
-    Body b1(Point3(5, 5, 0), 4, Vec3(), false);
-    Body b2(Point3(7, 5, 0), 4, Vec3(), false);
+    Object b1(Point3(5, 5, 0), 4, Vec3(), false);
+    Object b2(Point3(7, 5, 0), 4, Vec3(), false);
 
     SphereCollider c1(&b1, 3);
     SphereCollider c2(&b2, 4);
@@ -14,8 +14,8 @@ TEST(CircleCollisionTest, CirclesShouldCollide)
 
 TEST(CircleCollisionTest, CirclesShouldNotCollide)
 {
-    Body b1(Point3(5, 5, 0), 4, Vec3(), false);
-    Body b2(Point3(10, 5, 0), 4, Vec3(), false);
+    Object b1(Point3(5, 5, 0), 4, Vec3(), false);
+    Object b2(Point3(10, 5, 0), 4, Vec3(), false);
 
     SphereCollider c1(&b1, 2);
     SphereCollider c2(&b2, 2);
@@ -25,8 +25,8 @@ TEST(CircleCollisionTest, CirclesShouldNotCollide)
 
 TEST(RectCollisionTest, RectanglesShouldCollide)
 {
-    Body b1(Point3(2, 2, 0), 4, Vec3(), false);
-    Body b2(Point3(3, 3, 0), 4, Vec3(), false);
+    Object b1(Point3(2, 2, 0), 4, Vec3(), false);
+    Object b2(Point3(3, 3, 0), 4, Vec3(), false);
 
     BoxCollider s1(&b1, Vec3(4, 4, 4));
     BoxCollider s2(&b2, Vec3(4, 4, 4));
@@ -36,8 +36,8 @@ TEST(RectCollisionTest, RectanglesShouldCollide)
 
 TEST(RectCollisionTest, RectanglesShouldNotCollide)
 {
-    Body b1(Point3(0, 0, 0), 4, Vec3(), false);
-    Body b2(Point3(5, 5, 0), 4, Vec3(), false);
+    Object b1(Point3(0, 0, 0), 4, Vec3(), false);
+    Object b2(Point3(5, 5, 0), 4, Vec3(), false);
 
     BoxCollider s1(&b1, Vec3(2, 2, 2));
     BoxCollider s2(&b2, Vec3(2, 2, 2));
@@ -46,8 +46,8 @@ TEST(RectCollisionTest, RectanglesShouldNotCollide)
 }
 
 TEST(MixedCollisionTest, BoxCollideSphere) {
-    Body b1(Point3(0, 0, 0), 4, Vec3(), false);
-    Body b2(Point3(5, 5, 0), 4, Vec3(), false);
+    Object b1(Point3(0, 0, 0), 4, Vec3(), false);
+    Object b2(Point3(5, 5, 0), 4, Vec3(), false);
 
     BoxCollider s1(&b1, Vec3(2, 2, 2));
     SphereCollider s2(&b2, 100);
@@ -56,8 +56,8 @@ TEST(MixedCollisionTest, BoxCollideSphere) {
 }
 
 TEST(MixedCollisionTest, BoxNotCollideSphere) {
-    Body b1(Point3(0, 0, 0), 4, Vec3(), false);
-    Body b2(Point3(5, 5, 0), 4, Vec3(), false);
+    Object b1(Point3(0, 0, 0), 4, Vec3(), false);
+    Object b2(Point3(5, 5, 0), 4, Vec3(), false);
 
     BoxCollider s1(&b1, Vec3(2, 2, 2));
     SphereCollider s2(&b2, 1);

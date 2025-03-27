@@ -4,7 +4,7 @@
 #include "Math.hpp"
 
 // Represents a physics object (e.g., a moving ball)
-class Body
+class Object
 {
 public:
     Point3 position;
@@ -12,7 +12,7 @@ public:
     bool IsFixed;
     float mass;
 
-    Body(Point3 pos, float mass, Vec3 v = Vec3(0, 0, 0), bool IsFixed = false);
+    Object(Point3 pos, float mass, Vec3 v = Vec3(0, 0, 0), bool IsFixed = false);
     // Body(Point3 pos, float mass);
 };
 

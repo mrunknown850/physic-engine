@@ -3,7 +3,7 @@
 // Implement physic engine
 PhysicsEngine::PhysicsEngine(double timeStep) : timeStep(timeStep) {}
 int PhysicsEngine::ObjectCount() { return bodies.size(); }
-int PhysicsEngine::CreateObject(const Body &body)
+int PhysicsEngine::CreateObject(const Object &body)
 {
     bodies.push_back(body);
     return bodies.size() - 1;
@@ -16,7 +16,7 @@ void PhysicsEngine::applyForce(int bodyIndex, const Force &force)
 }
 
 // Get Object
-Body *PhysicsEngine::GetObject(int body_id) { return &bodies[body_id]; }
+Object *PhysicsEngine::GetObject(int body_id) { return &bodies[body_id]; }
 
 // Implement physic update
 void PhysicsEngine::update()
