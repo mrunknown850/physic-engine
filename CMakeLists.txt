@@ -23,11 +23,7 @@ include_directories(
 
 # Collect all backend source files
 file(GLOB_RECURSE BACKEND_SOURCES
-    # "backend/src/main.cpp"
-    "backend/src/physics/Forces.cpp"
-    "backend/src/physics/Math.cpp"
-    "backend/src/physics/PhysicsEngine.cpp"
-    "backend/src/physics/RigidBody.cpp"
+    "backend/src/physics/*.cpp"
 )
 
 # Create the backend executable

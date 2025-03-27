@@ -106,4 +106,5 @@ public:
  */
 double PointDistanceSquared(const Point3 &p1, const Point3 &p2);
 
+
 #endif
