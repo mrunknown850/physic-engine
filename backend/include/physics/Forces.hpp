@@ -7,11 +7,11 @@
 class Force
 {
 public:
-    Vec3 origin;
+    Vec3 offset;
     Vec3 pointing_vector;
     float duration;
 
-    Force(Vec3 origin, Vec3 pointing_vector, float duration);
+    Force(Vec3 offset, Vec3 pointing_vector, float duration);
     Force operator+(const Force &other) const;
     Force operator-(const Force &other) const;
     Force operator*(float scalar) const;

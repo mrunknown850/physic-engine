@@ -1,3 +1,4 @@
 #include "RigidBody.hpp"
 
-RigidBody::RigidBody(Vec3 pos, float m) : position(pos), velocity(0, 0, 0), mass(m) {}
+Body::Body(Point3 pos, float m, Vec3 v, bool fixed) : position(pos), mass(m), velocity(v), IsFixed(fixed) {}
+// Body::Body(Point3 pos, float m) : position(pos), mass(m) {}
